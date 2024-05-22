@@ -5,6 +5,7 @@ from langchain.prompts import ChatPromptTemplate
 import os
 from flask import Flask, request, jsonify
 
+
 os.environ['OPENAI_API_KEY'] = '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'
 
 HOLIDAYS_CHROMA_PATH = "holidays\Chroma"
