@@ -227,12 +227,13 @@ Answer the question based on the context and the instructions that has been give
 
     # Search the DB.
     results = db.similarity_search_with_relevance_scores(question, k=3)
+    print(results)
     
 
     context_text = "\n\n---\n\n".join([doc.page_content for doc, _score in results])
     prompt_template = ChatPromptTemplate.from_template(PROMPT_TEMPLATE)
     prompt = prompt_template.format(context=context_text, question=question)
-    print(prompt)
+    # print(prompt)
 
     model = ChatOpenAI()
     response_text = model.predict(prompt)
