@@ -110,7 +110,7 @@ app = Flask(__name__)
 
 def get_response(question,topic):
     
-    HOLIDAYS_CHROMA_PATH = "holidays\Chroma"
+    HOLIDAYS_CHROMA_PATH = "holidays"
     ORGANISATION_CHROM_PATH = "studentOrganisation"
     RMS_CHROM_PATH = "RMS"
     ANNOUNCEMENT_CHROM_PATH = "announcement" 
@@ -133,7 +133,7 @@ def get_response(question,topic):
     """
     ORGANISATION_PROMPT_TEMPLATE = """
     You are a chatbot made for the Lovely professional university students and your name is LPU Query Bot.
-    Your only task is to answer questions related to student orgainsation that are there in LPU.
+    Your only task is to answer questions related to student orgainsation that are there in LPU don't answer anything about holidays or announcements.
     Answer the question based on the following context if the user asks about the questions related to the context but
     do not metion the word rather use word knowledge and you can also use your own knowledge if the question is not related to the context and
     provide the answer in more formal way rather than just giving the answer from the context and
