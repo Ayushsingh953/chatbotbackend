@@ -220,14 +220,18 @@ Answer the question based on the context and the instructions that has been give
     elif topic == 'pass':
         CHROMA_PATH = PASS_CHROM_PATH
         PROMPT_TEMPLATE = PASS_PROMPT_TEMPLATE
+    
+    print(CHROMA_PATH)
         
     # Prepare the DB.
     embedding_function = OpenAIEmbeddings()
     db = Chroma(persist_directory=CHROMA_PATH, embedding_function=embedding_function)
+    
+    print(db)
 
     # Search the DB.
     results = db.similarity_search_with_relevance_scores(question, k=3)
-    print(results)
+    
     
 
     context_text = "\n\n---\n\n".join([doc.page_content for doc, _score in results])
