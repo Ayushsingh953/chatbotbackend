@@ -4,9 +4,12 @@ from langchain_openai import ChatOpenAI
 from langchain.prompts import ChatPromptTemplate
 import os
 from flask import Flask, request, jsonify
+from dotenv import load_dotenv
 
+load_dotenv()
 
-os.environ['OPENAI_API_KEY'] = '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'
+os.getenv("OPENAI_API_KEY")
+
 
 HOLIDAYS_CHROMA_PATH = "holidays\Chroma"
 ORGANISATION_CHROM_PATH = "studentOrganisation"
